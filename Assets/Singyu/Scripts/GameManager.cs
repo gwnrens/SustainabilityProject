@@ -2,26 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;
+    public static GameManager Instance { get; private set; }
 
     public float temperature = 10.0f;
     public int coins = 40;
-    public Text temperatureText;
-    public Text coinsText;
+    public TextMeshProUGUI temperatureText;
+    public TextMeshProUGUI coinsText;
 
-    public float temperatureIncreaseRate = 0.0f; // Degrees per minute
-    public int coalFactoryCost = 40;
-    public int coalFactoryTemperatureEffect = 1; // Increase in degrees per minute
-    public int coalFactoryCoinProduction = 10; // Coins produced per minute
-
-    private float temperatureTimer = 0.0f;
-    private float coinTimer = 0.0f;
+    private float timer = 0.0f;
     private int numberOfCoalFactories = 0;
+
+    public float temperatureIncreasePerMinute = 0.5f;
+    public int coinsIncreasePerMinute = 20;
 
     private void Awake()
     {
@@ -29,52 +26,52 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
     {
-        if (numberOfCoalFactories > 0)
-        {
-            temperatureTimer += Time.deltaTime;
-            if (temperatureTimer >= 60.0f)
-            {
-                temperatureTimer -= 60.0f;
-                temperature += numberOfCoalFactories * temperatureIncreaseRate;
-            }
+        timer += Time.deltaTime;
 
-            coinTimer += Time.deltaTime;
-            if (coinTimer >= 60.0f)
-            {
-                coinTimer -= 60.0f;
-                coins += numberOfCoalFactories * coalFactoryCoinProduction;
-            }
+  
+        if (timer >= 60.0f)
+        {
+            timer -= 60.0f;
+            ModifyTemperature(numberOfCoalFactories * temperatureIncreasePerMinute);
+            ModifyCoins(numberOfCoalFactories * coinsIncreasePerMinute);
         }
 
-        temperatureText.text = $"Temperature: {temperature:F1}°C";
-        coinsText.text = $"Coins: {coins}";
+        temperatureText.text = $"Temperatuur: {temperature:F1}°C";
+        coinsText.text = $"Munten: {coins}";
     }
 
-    public void BuyCoalFactory()
+    public void ModifyCoins(int amount)
     {
-        if (coins >= coalFactoryCost)
-        {
-            coins -= coalFactoryCost;
-            numberOfCoalFactories++;
-            temperatureIncreaseRate += coalFactoryTemperatureEffect;
-        }
+        coins += amount;
+        coinsText.text = $"Munten: {coins}";
     }
 
-    public void SellCoalFactory()
+    public void ModifyTemperature(float amount)
+    {
+        temperature += amount;
+        temperatureText.text = $"Temperatuur: {temperature:F1}°C";
+    }
+
+    public void AddCoalFactory()
+    {
+        numberOfCoalFactories++;
+    }
+
+    public void RemoveCoalFactory()
     {
         if (numberOfCoalFactories > 0)
         {
-            coins += coalFactoryCost;
             numberOfCoalFactories--;
-            temperatureIncreaseRate -= coalFactoryTemperatureEffect;
         }
     }
 }
