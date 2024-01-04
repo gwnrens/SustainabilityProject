@@ -1,24 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-using UnityEngine;
 using TMPro;
+
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    // Voor kolenfabrieken
     public float temperature = 10.0f;
     public int coins = 40;
     public TextMeshProUGUI temperatureText;
     public TextMeshProUGUI coinsText;
-
     private float timer = 0.0f;
     private int numberOfCoalFactories = 0;
-
     public float temperatureIncreasePerMinute = 0.5f;
     public int coinsIncreasePerMinute = 20;
+
+    // Voor lampen
+    public Light[] lights;
 
     private void Awake()
     {
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-  
+        // Update voor kolenfabrieken
         if (timer >= 60.0f)
         {
             timer -= 60.0f;
@@ -73,5 +74,11 @@ public class GameManager : MonoBehaviour
         {
             numberOfCoalFactories--;
         }
+    }
+
+    //lamp
+    public void TurnOffLight()
+    {
+        ModifyCoins(20); 
     }
 }
