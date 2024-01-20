@@ -10,6 +10,7 @@ public class IntroPanelController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 0;
         // Verberg alle panelen behalve de eerste
         foreach (GameObject panel in introPanels)
         {

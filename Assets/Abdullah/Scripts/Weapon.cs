@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public enum WeaponType
 {
@@ -33,9 +34,13 @@ public class Weapon : MonoBehaviour
     public AudioClip fireSound;
     public AudioClip reloadSound;
     public AudioClip dryFireSound;
+    public AudioMixerGroup masterMixerGroup; // Voeg deze variabele toe
+    private AudioSource audioSource;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = masterMixerGroup;
         currentAmmo = ammoCapacity;
     }
 

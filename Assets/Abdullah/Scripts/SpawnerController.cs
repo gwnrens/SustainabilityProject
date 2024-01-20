@@ -12,6 +12,7 @@ public class SpawnerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            Time.timeScale = 1;
             foreach (EnemySpawner spawner in spawners)
             {
                 spawner.StartSpawning();

@@ -1,13 +1,13 @@
 using UnityEngine;
-using TMPro; // Namespace for TextMeshPro
+using TMPro;
 
 public class CoinManager : MonoBehaviour
 {
     public static CoinManager Instance { get; private set; }
-    private float totalCoins = 100f; // Use float for more precise accumulation
-    public int coins => Mathf.FloorToInt(totalCoins); // Public getter to return the integer part
-    public TextMeshProUGUI coinText; // Reference to the TextMeshProUGUI that displays the coin count
-    private float coinRate = 0f; // Coin generation rate per second
+    private float totalCoins = 3f; 
+    public int coins => Mathf.FloorToInt(totalCoins); 
+    public TextMeshProUGUI coinText; 
+    private float coinRate = 0f; 
 
     void Awake()
     {
@@ -29,9 +29,8 @@ public class CoinManager : MonoBehaviour
 
     private void Update()
     {
-        // Generate coins based on the coin rate
         totalCoins += coinRate * Time.deltaTime;
-        UpdateCoinText(); // You may want to limit how often this updates for performance reasons
+        UpdateCoinText();
     }
 
     public void AddCoin(int n = 1)
@@ -58,11 +57,7 @@ public class CoinManager : MonoBehaviour
     {
         if (coinText != null)
         {
-            coinText.text = "Coins: " + coins; // Using the coins getter to display the integer part
-        }
-        else
-        {
-            Debug.LogWarning("Coin TextMeshProUGUI component not set.");
+            coinText.text = "Coins: " + coins;
         }
     }
 

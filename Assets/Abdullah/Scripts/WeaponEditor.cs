@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using UnityEngine.Audio;
 
 [CustomEditor(typeof(Weapon))]
 public class WeaponEditor : Editor
@@ -35,6 +36,7 @@ public class WeaponEditor : Editor
             weapon.fireSound = (AudioClip)EditorGUILayout.ObjectField("Fire", weapon.fireSound, typeof(AudioClip), false);
             weapon.reloadSound = (AudioClip)EditorGUILayout.ObjectField("Reload", weapon.reloadSound, typeof(AudioClip), false);
             weapon.dryFireSound = (AudioClip)EditorGUILayout.ObjectField("Out of Ammo", weapon.dryFireSound, typeof(AudioClip), false);
+            weapon.masterMixerGroup = (AudioMixerGroup)EditorGUILayout.ObjectField("Master Mixer Group", weapon.masterMixerGroup, typeof(AudioMixerGroup), false);
         }
 
         // This makes the editor GUI re-draw the inspector if values have changed
