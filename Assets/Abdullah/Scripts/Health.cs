@@ -50,21 +50,24 @@ public class Health : MonoBehaviour
 			currentHealth = maxHealth;
 	}
 
-	public void Die()
-	{
-		// This GameObject is officially dead.  This is used to make sure the Die() function isn't called again
-		dead = true;
-        CoinManager.Instance.AddCoin();     // Make death effects
-		co2Manager.DecreaseCO2(1);
+    public void Die()
+    {
+        dead = true;
+        CoinManager.Instance.AddCoin();
+        co2Manager.DecreaseCO2(1);
+
         if (replaceWhenDead)
-			Instantiate(deadReplacement, transform.position, transform.rotation);
-		if (makeExplosion)
-			Instantiate(explosion, transform.position, transform.rotation);
+            Instantiate(deadReplacement, transform.position, transform.rotation);
+        if (makeExplosion)
+            Instantiate(explosion, transform.position, transform.rotation);
 
-		if (isPlayer && deathCam != null)
-			deathCam.SetActive(true);
-        // Remove this GameObject from the scene
+        if (isPlayer && deathCam != null)
+            deathCam.SetActive(true);
+
+        // Notify the GameController
+        FindObjectOfType<GameController>().EnemyDied();
+
         Destroy(gameObject);
+    }
 
-	}
 }

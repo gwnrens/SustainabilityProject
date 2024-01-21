@@ -4,6 +4,13 @@ public class DamageZone : MonoBehaviour
 {
     public Healthbar healthbar; // Assign your Healthbar script in the Inspector
     public CO2Manager CO2Manager; // Assign your CO2Manager script in the Inspector
+    private GameController gameController; // Reference to the GameController
+
+    void Start()
+    {
+        // Find and assign the GameController
+        gameController = FindObjectOfType<GameController>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,6 +28,7 @@ public class DamageZone : MonoBehaviour
 
             // Optionally deactivate the car GameObject
             other.gameObject.SetActive(false);
+            gameController.EnemyDied();
         }
     }
 }

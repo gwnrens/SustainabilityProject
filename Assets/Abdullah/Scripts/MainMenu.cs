@@ -20,4 +20,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("abd_menu");
     }
+
+    public void NextGame()
+    {
+        SceneManager.LoadScene("");
+    }
 }
