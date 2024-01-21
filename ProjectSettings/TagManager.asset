@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Team2
+  - Concrete
+  - BHException
+  - Wood
+  - Ground
+  - enemy
+  - Explosion
   layers:
   - Default
   - TransparentFX
@@ -11,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
