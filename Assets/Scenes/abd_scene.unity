@@ -1898,7 +1898,6 @@ GameObject:
   - component: {fileID: 191270969}
   - component: {fileID: 191270972}
   - component: {fileID: 191270971}
-  - component: {fileID: 191270970}
   m_Layer: 5
   m_Name: xBonus (3)
   m_TagString: Untagged
@@ -1925,23 +1924,6 @@ RectTransform:
   m_AnchoredPosition: {x: 214.44255, y: 0}
   m_SizeDelta: {x: 254.05, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &191270970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191270968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1da6fc4c5df2d46b56bc7ec850ae67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceTextMesh: {fileID: 1439398982}
-  targetTextMesh: {fileID: 191270971}
-  Total: {fileID: 0}
-  operationValue: 15
-  bonusTextMeshes: []
 --- !u!114 &191270971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7224,7 +7206,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7434,7 +7416,6 @@ GameObject:
   - component: {fileID: 694494310}
   - component: {fileID: 694494313}
   - component: {fileID: 694494312}
-  - component: {fileID: 694494311}
   m_Layer: 5
   m_Name: xBonus (4)
   m_TagString: Untagged
@@ -7461,23 +7442,6 @@ RectTransform:
   m_AnchoredPosition: {x: 214, y: 0}
   m_SizeDelta: {x: 254.05, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &694494311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694494309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1da6fc4c5df2d46b56bc7ec850ae67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceTextMesh: {fileID: 661128785}
-  targetTextMesh: {fileID: 694494312}
-  Total: {fileID: 0}
-  operationValue: 20
-  bonusTextMeshes: []
 --- !u!114 &694494312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7910,7 +7874,6 @@ GameObject:
   - component: {fileID: 751373589}
   - component: {fileID: 751373592}
   - component: {fileID: 751373591}
-  - component: {fileID: 751373590}
   m_Layer: 5
   m_Name: xBonus (5)
   m_TagString: Untagged
@@ -7937,23 +7900,6 @@ RectTransform:
   m_AnchoredPosition: {x: 214.44171, y: 0}
   m_SizeDelta: {x: 254.0474, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &751373590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 751373588}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c1da6fc4c5df2d46b56bc7ec850ae67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceTextMesh: {fileID: 756039843}
-  targetTextMesh: {fileID: 751373591}
-  Total: {fileID: 0}
-  operationValue: 25
-  bonusTextMeshes: []
 --- !u!114 &751373591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8112,14 +8058,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1da6fc4c5df2d46b56bc7ec850ae67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceTextMesh: {fileID: 0}
-  targetTextMesh: {fileID: 0}
-  Total: {fileID: 1461009214}
-  operationValue: 0
-  bonusTextMeshes:
+  sourceTextMeshes:
+  - {fileID: 1439398982}
+  - {fileID: 661128785}
+  - {fileID: 756039843}
+  targetTextMeshes:
   - {fileID: 191270971}
   - {fileID: 694494312}
   - {fileID: 751373591}
+  totalTextMesh: {fileID: 1461009214}
 --- !u!1 &756039841
 GameObject:
   m_ObjectHideFlags: 0
@@ -8178,7 +8125,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8594,6 +8541,55 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 117746830}
   m_SourcePrefab: {fileID: 100100000, guid: 8fa324388c16b5c4eac9846338b35b17, type: 3}
+--- !u!1 &817639822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 817639824}
+  - component: {fileID: 817639823}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &817639823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817639822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: b88fc5ef61499e541b35bcc9b5eaddb9, type: 2}
+--- !u!4 &817639824
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817639822}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 501.51758, y: 4.159453, z: 387.8983}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &827682865 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 694e1313d3f12e84aaf959ff6960ddaf,
@@ -11602,7 +11598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dd6c361d92d1b42909af550d163e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 1000
+  mouseSensitivity: 800
   playerBody: {fileID: 1000551447}
   mouseLookEnabled: 0
 --- !u!114 &1073860784
@@ -11628,8 +11624,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -11682,7 +11678,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 66.9
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -14629,7 +14625,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 2
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -24021,3 +24017,4 @@ SceneRoots:
   - {fileID: 956272791}
   - {fileID: 535108129}
   - {fileID: 77169211}
+  - {fileID: 817639824}

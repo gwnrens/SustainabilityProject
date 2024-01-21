@@ -1,59 +1,42 @@
 using UnityEngine;
 using TMPro;
 
-public class TMPTextModifier : MonoBehaviour
+public class BonusCalculator : MonoBehaviour
 {
-    public TextMeshProUGUI sourceTextMesh; // Optioneel
-    public TextMeshProUGUI targetTextMesh; // Optioneel
-    public TextMeshProUGUI Total;
-    public int operationValue = 25; // Gebruikt voor vermenigvuldiging
-    public TextMeshProUGUI[] bonusTextMeshes; // Optioneel, gebruikt voor optelling
+    public TextMeshProUGUI[] sourceTextMeshes; // Bronnen: Array van 3 TextMesh Pro UI elementen met aantal items
+    public TextMeshProUGUI[] targetTextMeshes; // Targets: Array van 3 TextMesh Pro UI elementen voor bonussen
+    public TextMeshProUGUI totalTextMesh; // TextMesh Pro UI voor het tonen van het totaal
+    private int[] bonusMultipliers = new int[] { 15, 20, 25 }; // Vermenigvuldigingsfactoren voor elke bonus
 
     void Start()
     {
-        if (sourceTextMesh != null && targetTextMesh != null)
+        if (sourceTextMeshes.Length != 3 || targetTextMeshes.Length != 3)
         {
-            PerformMultiplication();
+            Debug.LogError("Er moeten precies 3 source en 3 target TextMeshes zijn.");
+            return;
         }
-        else if (bonusTextMeshes.Length > 0)
+
+        int total = 0;
+        for (int i = 0; i < sourceTextMeshes.Length; i++)
         {
-            PerformAddition();
+            int bonus = CalculateBonus(sourceTextMeshes[i], bonusMultipliers[i]);
+            targetTextMeshes[i].text = bonus.ToString();
+            total += bonus;
+        }
+
+        totalTextMesh.text = total.ToString();
+    }
+
+    private int CalculateBonus(TextMeshProUGUI sourceTextMesh, int multiplier)
+    {
+        if (int.TryParse(sourceTextMesh.text, out int value))
+        {
+            return value * multiplier;
         }
         else
         {
-            Debug.LogError("Geen geldige configuratie van textmesh gevonden.");
+            Debug.LogError($"Kan tekst niet omzetten naar getal: {sourceTextMesh.text}");
+            return 0;
         }
     }
-
-    private void PerformMultiplication()
-    {
-        if (int.TryParse(sourceTextMesh.text, out int baseValue))
-        {
-            baseValue *= operationValue;
-            targetTextMesh.text = baseValue.ToString();
-        }
-        else
-        {
-            Debug.LogError("Source TextMesh Pro text is not a valid integer.");
-        }
-    }
-
-    private void PerformAddition()
-    {
-        int sum = 0;
-        foreach (TextMeshProUGUI bonusTextMesh in bonusTextMeshes)
-        {
-            Debug.Log($"Bonus text (before parsing): '{bonusTextMesh.text}'");
-            if (int.TryParse(bonusTextMesh.text, out int bonusValue))
-            {
-                sum += bonusValue;
-            }
-            else
-            {
-                Debug.LogError($"Failed to parse text: {bonusTextMesh.text}");
-            }
-        }
-        Total.text = sum.ToString();
-    }
-
 }

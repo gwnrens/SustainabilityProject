@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public EnemySpawner[] spawners; // Assign in Inspector
-    public Healthbar healthbar; // Assign in Inspector
+    public EnemySpawner[] spawners; 
+    public Healthbar healthbar; 
     public TextMeshProUGUI won;
     public GameObject gameOnPanel;
     public GameObject gameOverPanel;
     public GameObject outro;
     public GameObject stats;
     public GameObject player;
-    public CO2Manager co2Manager; // Assign in Inspector
+    public CO2Manager co2Manager;
 
-    public GameObject explosionPrefab; // Assign in Inspector
-    public Camera explosionCamera; // Assign in Inspector
-    public Camera mainCamera; // Assign in Inspector
-    public Transform[] explosionPoints; // Assign in Inspector
+    public GameObject explosionPrefab;
+    public Camera explosionCamera; 
+    public Camera mainCamera; 
+    public Transform[] explosionPoints; 
 
     private int totalEnemiesToSpawn;
     private int totalEnemiesDead;
@@ -36,6 +36,10 @@ public class GameController : MonoBehaviour
         if (healthbar.gameOver && !gameOverSequenceStarted)
         {
             gameOverSequenceStarted = true; // Set the flag so it doesn't run again
+            foreach (var spawner in spawners)
+            {
+                spawner.startSpawning = false; // Stop spawning enemies
+            }
             TriggerGameOverSequence();
         }
     }
@@ -64,13 +68,11 @@ public class GameController : MonoBehaviour
             }
         }
 
-        // Delay handled by a separate method call
         Invoke("DestroyExplosions", 7f); // Delay for 7 seconds
     }
 
     private void DestroyExplosions()
     {
-        // Zoek alle explosie gameobjecten in de scene
         GameObject[] explosions = GameObject.FindGameObjectsWithTag("Explosion");
 
         // Loop door alle explosies en vernietig ze
@@ -79,25 +81,23 @@ public class GameController : MonoBehaviour
             Destroy(explosion);
         }
 
-        // Roep de functie aan om de gameOverSequence te voltooien
         FinishGameOverSequence();
     }
 
     private void FinishGameOverSequence()
     {
-        // Switch back to the main camera if needed
         if (explosionCamera != null && mainCamera != null)
         {
             explosionCamera.gameObject.SetActive(false);
             mainCamera.gameObject.SetActive(true);
         }
 
-        // Delay showing the outro UI until after the explosions have finished
         ShowOutroUI();
     }
 
     private void ShowOutroUI()
     {
+        Time.timeScale = 0;
         explosionCamera.gameObject.SetActive(true);
         // Determine if the player won
         bool wonGame = co2Manager.co2Slider.value <= 40;
@@ -105,7 +105,6 @@ public class GameController : MonoBehaviour
         gameOverPanel.SetActive(true);
         player.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
-
 
 
         if (wonGame)
