@@ -19,7 +19,6 @@ public class Healthbar : MonoBehaviour
         slider.value = health;
        if (slider.value <= 0)
         {
-            Time.timeScale = 0;
             gameOver = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
