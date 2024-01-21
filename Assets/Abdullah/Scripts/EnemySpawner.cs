@@ -11,8 +11,12 @@ public class EnemySpawner : MonoBehaviour
     public bool startSpawning = false;
     public int enemiesSpawned = 0;
 
+    public float intenseSpawnStartTime = 350f; // Time in seconds to start intense spawning
+    public float intenseSpawnRate = 0.01f; // Spawn rate during intense phase
+
     private float nextSpawnTime;
     private int currentEnemyCount;
+    private bool intenseSpawningActive = false;
 
     void Start()
     {
@@ -26,11 +30,21 @@ public class EnemySpawner : MonoBehaviour
             return;
         }
 
+        // Check if it's time to start intense spawning
+        if (Time.time >= intenseSpawnStartTime && !intenseSpawningActive)
+        {
+            spawnRate = intenseSpawnRate; // Set to a much faster spawn rate
+            intenseSpawningActive = true; // Flag to indicate intense spawning phase is active
+        }
+
         if (Time.time > nextSpawnTime && currentEnemyCount < maxEnemies)
         {
             SpawnEnemy();
             nextSpawnTime = Time.time + spawnRate;
-            spawnRate = Mathf.Max(spawnRate - spawnRateDecrease, minimumSpawnRate);
+            if (!intenseSpawningActive)
+            {
+                spawnRate = Mathf.Max(spawnRate - spawnRateDecrease, minimumSpawnRate);
+            }
         }
     }
 
@@ -38,10 +52,23 @@ public class EnemySpawner : MonoBehaviour
     {
         int spawnIndex = Random.Range(0, spawnPoints.Length);
         Transform spawnPoint = spawnPoints[spawnIndex];
-
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        if (intenseSpawningActive)
+        {
+            SetEnemyHealth(enemy, 900f); // Set health to 900
+        }
         currentEnemyCount++;
         enemiesSpawned++;
+    }
+
+    private void SetEnemyHealth(GameObject enemy, float health)
+    {
+        Health enemyHealth = enemy.GetComponent<Health>();
+        if (enemyHealth != null)
+        {
+            enemyHealth.startingHealth = health;
+            enemyHealth.maxHealth = health;
+        }
     }
 
     public void EnemyDefeated()
@@ -53,5 +80,4 @@ public class EnemySpawner : MonoBehaviour
     {
         startSpawning = true;
     }
-
 }

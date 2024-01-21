@@ -15,13 +15,13 @@ public class TMPTextModifier : MonoBehaviour
         {
             PerformMultiplication();
         }
-        else if (bonusTextMeshes != null && bonusTextMeshes.Length > 0)
+        else if (bonusTextMeshes.Length > 0)
         {
             PerformAddition();
         }
         else
         {
-            Debug.LogError("Geen geldige configuratie van TextMesh Pro-objecten gevonden.");
+            Debug.LogError("Geen geldige configuratie van textmesh gevonden.");
         }
     }
 
@@ -43,12 +43,17 @@ public class TMPTextModifier : MonoBehaviour
         int sum = 0;
         foreach (TextMeshProUGUI bonusTextMesh in bonusTextMeshes)
         {
+            Debug.Log($"Bonus text (before parsing): '{bonusTextMesh.text}'");
             if (int.TryParse(bonusTextMesh.text, out int bonusValue))
             {
                 sum += bonusValue;
             }
+            else
+            {
+                Debug.LogError($"Failed to parse text: {bonusTextMesh.text}");
+            }
         }
-        // Hier kun je de somergegevens gebruiken zoals je wilt.
         Total.text = sum.ToString();
     }
+
 }

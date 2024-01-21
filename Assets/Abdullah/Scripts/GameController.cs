@@ -49,14 +49,17 @@ public class GameController : MonoBehaviour
             mainCamera.gameObject.SetActive(false);
         }
 
-        // Trigger explosions once
-        if (explosionPrefab != null && explosionPoints != null)
+        if (healthbar.slider.value > 0 && co2Manager.co2Slider.value < 40)
         {
-            foreach (var point in explosionPoints)
+            // Trigger explosions once
+            if (explosionPrefab != null && explosionPoints != null)
             {
-                if (point != null)
+                foreach (var point in explosionPoints)
                 {
-                    Instantiate(explosionPrefab, point.position, Quaternion.identity);
+                    if (point != null)
+                    {
+                        Instantiate(explosionPrefab, point.position, Quaternion.identity);
+                    }
                 }
             }
         }
