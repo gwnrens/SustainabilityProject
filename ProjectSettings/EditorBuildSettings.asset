@@ -11,9 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FNAF_Groen.unity
     guid: 291c1f116413b5e49b525eb08670031c
-    path: Assets/Scenes/abd_menu.unity
-    guid: 9867eb19ad409dd4f95fc951cff67410
   - enabled: 1
     path: Assets/Scenes/abd_scene.unity
     guid: 577cf471caf50424aac879476f8b4c02
+  - enabled: 1
+    path: Assets/Scenes/abd_menu.unity
+    guid: 9867eb19ad409dd4f95fc951cff67410
   m_configObjects: {}
