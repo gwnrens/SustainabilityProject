@@ -15,7 +15,8 @@ public class ColdSimulation : MonoBehaviour
     public Text coldValueText;     
     public Text dangerMeterText;   
     public Text timerText;         
-    public Text gameOverText;    
+    public Text gameOverText;
+    public Text winText;
     
     public string nextSceneName = "NextScene";     // naam voor volgende scene
     public float restartDelay = 10f;                // delay voor herstarten van het spel
@@ -99,6 +100,7 @@ public class ColdSimulation : MonoBehaviour
         // check dat player nog leeft na 5 minuten
         if (gameTimer >= survivalTime)
         {
+            ShowWinText("Proficiat je hebt jezelf warm gehouden en je bent niet gepakt! Bekijk de tips in het pauze menu om thuis ook efficient de verwarming te gebruiken.");
             MoveToNextScene();
         }
 
@@ -223,6 +225,7 @@ public class ColdSimulation : MonoBehaviour
                 Debug.Log("Window Closed, Resetting Timer");
                 windowClosedTimer += Time.deltaTime;
                 windowClosed = true;  // zet windowclosed op true wanneer window gesloten is
+                dangerMeter = Mathf.Min(100f, dangerMeter + (dangerMeterIncreaseRate - 5) * Time.deltaTime);
 
                 // Check of window gesloten is voor meer dan 5 seconden
                 if (windowClosedTimer >= resetDangerThreshold && windowClosed && !dangerResetDone)
@@ -292,6 +295,15 @@ public class ColdSimulation : MonoBehaviour
         {
             gameOverText.text = message;
             gameOverText.gameObject.SetActive(true);
+        }
+    }
+
+    private void ShowWinText(string message)
+    {
+        if (winText != null)
+        {
+            winText.text = message;
+            winText.gameObject.SetActive(true);
         }
     }
 
