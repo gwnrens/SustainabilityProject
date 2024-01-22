@@ -11,7 +11,7 @@ public class RotateObject : MonoBehaviour
 
     private void Start()
     {
-        rotated = false;
+        rotated = true;
 
         // AudioSource component 
         audioSource = gameObject.AddComponent<AudioSource>();

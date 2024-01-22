@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -20,6 +21,11 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
        
+    }
+
+    public void GiveUp()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void PauseGame()
