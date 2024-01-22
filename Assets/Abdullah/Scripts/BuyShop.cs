@@ -8,21 +8,25 @@ public class ShopButton : MonoBehaviour
     private int count_items = 0;
     public CO2Manager co2Manager;
     public TextMeshProUGUI count;
+    public Healthbar healthbar;
 
     private void Update()
     {
-        // Check for right-click to purchase
-        if (Input.GetMouseButtonDown(1))
+        if (!healthbar.gameOver)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            // Check for right-click to purchase
+            if (Input.GetMouseButtonDown(1))
             {
-                // Check if the button was hit by the raycast
-                if (hit.transform == this.transform)
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    TryPurchaseItem();
+                    // Check if the button was hit by the raycast
+                    if (hit.transform == this.transform)
+                    {
+                        TryPurchaseItem();
+                    }
                 }
             }
         }

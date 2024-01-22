@@ -6,12 +6,10 @@ TagManager:
   tags:
   - WindowL
   - WindowR
-  - Enemy
   - Team2
   - Concrete
   - BHException
   - Wood
-  - Ground
   - enemy
   - Explosion
   - Ground
