@@ -9,7 +9,6 @@ public class BlockActivateTurret : MonoBehaviour
     {
         if (!healthbar.gameOver)
         {
-            // Check for right-click on this block
             if (Input.GetMouseButtonDown(1)) // 1 is the mouse button index for the right button
             {
                 RaycastHit hit;
