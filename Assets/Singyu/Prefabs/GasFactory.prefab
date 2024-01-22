@@ -368,6 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factorySellValue: 15
+  gameManagerElec: {fileID: 0}
 --- !u!1 &5254949342492169898
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +382,6 @@ GameObject:
   - component: {fileID: 6469387168224385344}
   - component: {fileID: 2768000662919615393}
   - component: {fileID: 2158755433484897350}
-  - component: {fileID: 8647044333910638139}
   m_Layer: 0
   m_Name: BuyPlatformGas
   m_TagString: Untagged
@@ -488,20 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factoryCost: 40
---- !u!114 &8647044333910638139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5254949342492169898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affcf8d289ea687469ae91236eaef01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coalFactory: {fileID: 4685959861815757103}
-  activationSound: {fileID: 8300000, guid: 6c4bf6f0ea2ce154f8753aaf0b794785, type: 3}
+  gameManagerElec: {fileID: 0}
 --- !u!1 &6465372130837584802
 GameObject:
   m_ObjectHideFlags: 0

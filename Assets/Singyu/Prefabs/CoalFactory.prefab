@@ -259,7 +259,6 @@ GameObject:
   - component: {fileID: 7622161093963399126}
   - component: {fileID: 459270594282507470}
   - component: {fileID: 4661370488530142988}
-  - component: {fileID: 6679353927501605350}
   m_Layer: 0
   m_Name: BuyPlatformCoal
   m_TagString: Untagged
@@ -366,20 +365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factoryCost: 40
---- !u!114 &6679353927501605350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6472470036834675139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affcf8d289ea687469ae91236eaef01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coalFactory: {fileID: 6657896474641282305}
-  activationSound: {fileID: 8300000, guid: 6c4bf6f0ea2ce154f8753aaf0b794785, type: 3}
+  gameManagerElec: {fileID: 0}
 --- !u!1 &6657896474641282305
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factorySellValue: 20
+  gameManagerElec: {fileID: 0}
 --- !u!1 &8760357024635272856
 GameObject:
   m_ObjectHideFlags: 0

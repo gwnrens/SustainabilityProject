@@ -152,7 +152,6 @@ GameObject:
   - component: {fileID: 1912602197646023474}
   - component: {fileID: 8011114714963604430}
   - component: {fileID: 3883500607620805055}
-  - component: {fileID: 2051643336664164348}
   m_Layer: 0
   m_Name: BuyPlatformNuke
   m_TagString: Untagged
@@ -258,20 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd598aaa1fef8a4fad1a93e7d2c0c96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2051643336664164348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4998457361010017722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affcf8d289ea687469ae91236eaef01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coalFactory: {fileID: 1001292342452362142}
-  activationSound: {fileID: 8300000, guid: 6c4bf6f0ea2ce154f8753aaf0b794785, type: 3}
+  gameManagerElec: {fileID: 0}
 --- !u!1 &6278048692001305582
 GameObject:
   m_ObjectHideFlags: 0

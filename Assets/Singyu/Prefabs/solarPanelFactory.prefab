@@ -609,7 +609,6 @@ GameObject:
   - component: {fileID: 5607707039955670992}
   - component: {fileID: 2514343667007496159}
   - component: {fileID: 191811195395869078}
-  - component: {fileID: 1302050835767289644}
   m_Layer: 0
   m_Name: BuyPlatformSolar
   m_TagString: Untagged
@@ -715,20 +714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5d8adfec60ad7418f77a2485f153c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1302050835767289644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6204319854645990012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: affcf8d289ea687469ae91236eaef01e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coalFactory: {fileID: 954636772113521684}
-  activationSound: {fileID: 8300000, guid: 6c4bf6f0ea2ce154f8753aaf0b794785, type: 3}
+  gameManagerElec: {fileID: 0}
 --- !u!1 &6958767409156352171
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solarPanelSellValue: 50
+  gameManagerElec: {fileID: 0}
 --- !u!114 &681833199733779475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,6 +849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   solarPanelSellValue: 50
+  gameManagerElec: {fileID: 0}
 --- !u!1 &7797534949535948340
 GameObject:
   m_ObjectHideFlags: 0
