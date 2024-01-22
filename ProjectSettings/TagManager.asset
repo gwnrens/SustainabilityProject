@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SpawnTrigger
+  - EndPoint
+  - Keuze2
+  - Keuze1
   layers:
   - Default
   - TransparentFX
