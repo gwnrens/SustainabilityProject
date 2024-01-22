@@ -1,0 +1,274 @@
+warning: in the working copy of 'Assets/Settings/URP-Balanced.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Assets/Settings/URP-Performant.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/packages-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/ShaderGraphSettings.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/TagManager.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/URPProjectSettings.asset', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Assets/Settings/URP-Balanced.asset b/Assets/Settings/URP-Balanced.asset[m
+[1mindex 83ee844..65bbfc8 100644[m
+[1m--- a/Assets/Settings/URP-Balanced.asset[m
+[1m+++ b/Assets/Settings/URP-Balanced.asset[m
+[36m@@ -12,8 +12,8 @@[m [mMonoBehaviour:[m
+   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}[m
+   m_Name: URP-Balanced[m
+   m_EditorClassIdentifier: [m
+[31m-  k_AssetVersion: 9[m
+[31m-  k_AssetPreviousVersion: 9[m
+[32m+[m[32m  k_AssetVersion: 11[m
+[32m+[m[32m  k_AssetPreviousVersion: 11[m
+   m_RendererType: 1[m
+   m_RendererData: {fileID: 0}[m
+   m_RendererDataList:[m
+[36m@@ -23,10 +23,16 @@[m [mMonoBehaviour:[m
+   m_RequireOpaqueTexture: 0[m
+   m_OpaqueDownsampling: 1[m
+   m_SupportsTerrainHoles: 1[m
+[31m-  m_StoreActionsOptimization: 0[m
+   m_SupportsHDR: 1[m
+[32m+[m[32m  m_HDRColorBufferPrecision: 0[m
+   m_MSAA: 1[m
+   m_RenderScale: 1[m
+[32m+[m[32m  m_UpscalingFilter: 0[m
+[32m+[m[32m  m_FsrOverrideSharpness: 0[m
+[32m+[m[32m  m_FsrSharpness: 0.92[m
+[32m+[m[32m  m_EnableLODCrossFade: 1[m
+[32m+[m[32m  m_LODCrossFadeDitheringType: 1[m
+[32m+[m[32m  m_ShEvalMode: 0[m
+   m_MainLightRenderingMode: 1[m
+   m_MainLightShadowsSupported: 1[m
+   m_MainLightShadowmapResolution: 1024[m
+[36m@@ -47,23 +53,62 @@[m [mMonoBehaviour:[m
+   m_CascadeBorder: 0.1[m
+   m_ShadowDepthBias: 1[m
+   m_ShadowNormalBias: 1[m
+[32m+[m[32m  m_AnyShadowsSupported: 1[m
+   m_SoftShadowsSupported: 1[m
+[32m+[m[32m  m_ConservativeEnclosingSphere: 0[m
+[32m+[m[32m  m_NumIterationsEnclosingSphere: 64[m
+[32m+[m[32m  m_SoftShadowQuality: 2[m
+   m_AdditionalLightsCookieResolution: 512[m
+   m_AdditionalLightsCookieFormat: 1[m
+   m_UseSRPBatcher: 1[m
+   m_SupportsDynamicBatching: 0[m
+   m_MixedLightingSupported: 1[m
+[32m+[m[32m  m_SupportsLightCookies: 1[m
+   m_SupportsLightLayers: 0[m
+   m_DebugLevel: 0[m
+[32m+[m[32m  m_StoreActionsOptimization: 0[m
+[32m+[m[32m  m_EnableRenderGraph: 0[m
+   m_UseAdaptivePerformance: 1[m
+   m_ColorGradingMode: 0[m
+   m_ColorGradingLutSize: 32[m
+   m_UseFastSRGBLinearConversion: 0[m
+[32m+[m[32m  m_SupportDataDrivenLensFlare: 1[m
+   m_ShadowType: 1[m
+   m_LocalShadowsSupported: 0[m
+   m_LocalShadowsAtlasResolution: 256[m
+   m_MaxPixelLights: 0[m
+   m_ShadowAtlasResolution: 256[m
+[31m-  m_ShaderVariantLogLevel: 0[m
+   m_VolumeFrameworkUpdateMode: 0[m
+[32m+[m[32m  m_Textures:[m
+[32m+[m[32m    blueNoise64LTex: {fileID: 2800000, guid: e3d24661c1e055f45a7560c033dbb837, type: 3}[m
+[32m+[m[32m    bayerMatrixTex: {fileID: 2800000, guid: f9ee4ed84c1d10c49aabb9b210b0fc44, type: 3}[m
+[32m+[m[32m  m_PrefilteringModeMainLightShadows: 1[m
+[32m+[m[32m  m_PrefilteringModeAdditionalLight: 4[m
+[32m+[m[32m  m_PrefilteringModeAdditionalLightShadows: 1[m
+[32m+[m[32m  m_PrefilterXRKeywords: 0[m
+[32m+[m[32m  m_PrefilteringModeForwardPlus: 1[m
+[32m+[m[32m  m_PrefilteringModeDeferredRendering: 1[m
+[32m+[m[32m  m_PrefilteringModeScreenSpaceOcclusion: 1[m
+[32m+[m[32m  m_PrefilterDebugKeywords: 0[m
+[32m+[m[32m  m_PrefilterWriteRenderingLayers: 0[m
+[32m+[m[32m  m_PrefilterHDROutput: 0[m
+[32m+[m[32m  m_PrefilterSSAODepthNormals: 0[m
+[32m+[m[32m  m_PrefilterSSAOSourceDepthLow: 0[m
+[32m+[m[32m  m_PrefilterSSAOSourceDepthMedium: 0[m
+[32m+[m[32m  m_PrefilterSSAOSourceDepthHigh: 0[m
+[32m+[m[32m  m_PrefilterSSAOInterleaved: 0[m
+[32m+[m[32m  m_PrefilterSSAOBlueNoise: 0[m
+[32m+[m[32m  m_PrefilterSSAOSampleCountLow: 0[m
+[32m+[m[32m  m_PrefilterSSAOSampleCountMedium: 0[m
+[32m+[m[32m  m_PrefilterSSAOSampleCountHigh: 0[m
+[32m+[m[32m  m_PrefilterDBufferMRT1: 0[m
+[32m+[m[32m  m_PrefilterDBufferMRT2: 0[m
+[32m+[m[32m  m_PrefilterDBufferMRT3: 0[m
+[32m+[m[32m  m_PrefilterSoftShadowsQualityLow: 0[m
+[32m+[m[32m  m_PrefilterSoftShadowsQualityMedium: 0[m
+[32m+[m[32m  m_PrefilterSoftShadowsQualityHigh: 0[m
+[32m+[m[32m  m_PrefilterSoftShadows: 0[m
+[32m+[m[32m  m_PrefilterScreenCoord: 0[m
+[32m+[m[32m  m_PrefilterNativeRenderPass: 0[m
+[32m+[m[32m  m_ShaderVariantLogLevel: 0[m
+   m_ShadowCascades: 0[m
+[1mdiff --git a/Assets/Settings/URP-Performant.asset b/Assets/Settings/URP-Performant.asset[m
+[1mindex 5e53341..8650b69 100644[m
+[1m--- a/Assets/Settings/URP-Performant.asset[m
+[1m+++ b/Assets/Settings/URP-Performant.asset[m
+[36m@@ -12,8 +12,8 @@[m [mMonoBehaviour:[m
+   m_Script: {fileID: 11500000, guid: bf2edee5c58d82540a51f03df9d42094, type: 3}[m
+   m_Name: URP-Performant[m
+   m_EditorClassIdentifier: [m
+[31m-  k_AssetVersion: 9[m
+[31m-  k_AssetPreviousVersion: 9[m
+[32m+[m[32m  k_AssetVersion: 11[m
+[32m+[m[32m  k_AssetPreviousVersion: 11[m
+   m_RendererType: 1[m
+   m_RendererData: {fileID: 0}[m
+   m_RendererDataList:[m
+[36m@@ -23,10 +23,16 @@[m [mMonoBehaviour:[m
+   m_RequireOpaqueTexture: 0[m
+   m_OpaqueDownsampling: 1[m
+   m_SupportsTerrainHoles: 1[m
+[31m-  m_StoreActionsOptimization: 0[m
+   m_SupportsHDR: 0[m
+[32m+[m[32m  m_HDRColorBufferPrecision: 0[m
+   m_MSAA: 1[m
+   m_RenderScale: 1[m
+[32m+[m[32m  m_UpscalingFilter: 0[m
+[32m+[m[32m  m_FsrOverrideSharpness: 0[m
+[32m+[m[32m  m_FsrSharpness: 0.92[m
+[32m+[m[32m  m_EnableLODCrossFade: 1[m
+[32m+[m[32m  m_LODCrossFadeDitheringType: 1[m
+[32m+[m[32m  m_ShEvalMode: 0[m
+   m_MainLightRenderingMode: 1[m
+   m_MainLightShadowsSupported: 0[m
+   m_MainLightShadowmapResolution: 1024[m
+[36m@@ -47,23 +53,62 @@[m [mMonoBehaviour:[m
+   m_CascadeBorder: 0.1[m
+   m_ShadowDepthBias: 1[m
+   m_ShadowNormalBias: 1[m
+[32m+[m[32m  m_AnyShadowsSupported: 1[m
+   m_SoftShadowsSupported: 0[m
+[32m+[m[32m  m_ConservativeEnclosingSphere: 0[m
+[32m+[m[32m  m_NumIterationsEnclosingSphere: 64[m
+[32m+[m[32m  m_SoftShadowQuality: 2[m
+   m_AdditionalLightsCookieResolution: 2048[m
+   m_AdditionalLightsCookieFormat: 3[m
+   m_UseSRPBatcher: 1[m
+   m_SupportsDynamicBatching: 0[m
+   m_MixedLightingSupported: 1[m
+[32m+[m[32m  m_SupportsLightCookies: 1[m
+   m_SupportsLightLayers: 0[m
+   m_DebugLevel: 0[m
+[32m+[m[32m  m_StoreActionsOptimization: 0[m
+[32m+[m[32m  m_EnableRenderGraph: 0[m
+   m_UseAdaptivePerformance: 1[m
+   m_ColorGradingMode: 0[m
+   m_ColorGradingLutSize: 16[m
+   m_UseFastSRGBLinearConversion: 0[m
+[32m+[m[32m  m_SupportDataDrivenLensFlare: 1[m
+   m_ShadowType: 1[m
+   m_LocalShadowsSupported: 0[m
+   m_LocalShadowsAtlasResolution: 256[m
+   m_MaxPixelLights: 0[m
+   m_ShadowAtlasResolution: 256[m
+[31m-  m_ShaderVariantLogLevel: 0[m
+   m_VolumeFrameworkUpdateMode: 0[m
+[32m+[m[32m  m_Textures:[m
+[32m+[m[32m    blueNoise64LTex: {fileID: 2800000, guid: e3d24661c1e055f45a7560c033dbb837, type: 3}[m
+[32m+[m[32m    bayerMatrixTex: {fileID: 2800000, guid: f9ee4ed84c1d10c49aabb9b210b0fc44, type: 3}[m
+[32m+[m[32m  m_PrefilteringModeMainLightShadows: 1[m
+[32m+[m[32m  m_PrefilteringModeAdditionalLight: 4[m
+[32m+[m[32m  m_PrefilteringModeAdditionalLightShadows: 1[m
+[32m+[m[32m  m_PrefilterXRKeywords: 0[m
+[32m+[m[32m  m_PrefilteringModeForwardPlus: 1[m
+[32m+[m[32m  m_PrefilteringModeDeferredRendering: 1[m
+[32m+[m[32m  m_PrefilteringModeScreenSpaceOcclusion: 1[m
+[32m+[m[32m  m_PrefilterDebugKeywords: 0[m
+[32m+[m[32m  m_PrefilterWriteRenderingLayers: 0[m
+[32m+[m[32m  m_PrefilterHDROutput: 0[m
+[32m+[m[32m  m_PrefilterSSAODepthNormals: 0[m
+[32m+[m[32m  m_PrefilterSSAOSourceDepthLow: 0[m
+[32m+[m[32m  m_PrefilterSSAOSourceDepthMedium: 0[m
+[32m+[m[32m  m_PrefilterSSAOSourceDepthHigh: 0[m
+[32m+[m[32m  m_PrefilterSSAOInterleaved: 0[m
+[32m+[m[32m  m_PrefilterSSAOBlueNoise: 0[m
+[32m+[m[32m  m_PrefilterSSAOSampleCountLow: 0[m
+[32m+[m[32m  m_PrefilterSSAOSampleCountMedium: 0[m
+[32m+[m[32m  m_PrefilterSSAOSampleCountHigh: 0[m
+[32m+[m[32m  m_PrefilterDBufferMRT1: 0[m
+[32m+[m[32m  m_PrefilterDBufferMRT2: 0[m
+[32m+[m[32m  m_PrefilterDBufferMRT3: 0[m
+[32m+[m[32m  m_PrefilterSoftShadowsQualityLow: 0[m
+[32m+[m[32m  m_PrefilterSoftShadowsQualityMedium: 0[m
+[32m+[m[32m  m_PrefilterSoftShadowsQualityHigh: 0[m
+[32m+[m[32m  m_PrefilterSoftShadows: 0[m
+[32m+[m[32m  m_PrefilterScreenCoord: 0[m
+[32m+[m[32m  m_PrefilterNativeRenderPass: 0[m
+[32m+[m[32m  m_ShaderVariantLogLevel: 0[m
+   m_ShadowCascades: 0[m
+[1mdiff --git a/Packages/manifest.json b/Packages/manifest.json[m
+[1mindex 8a1212d..d5e7200 100644[m
+[1m--- a/Packages/manifest.json[m
+[1m+++ b/Packages/manifest.json[m
+[36m@@ -4,6 +4,8 @@[m
+     "com.unity.ide.rider": "3.0.27",[m
+     "com.unity.ide.visualstudio": "2.0.22",[m
+     "com.unity.ide.vscode": "1.2.5",[m
+[32m+[m[32m    "com.unity.probuilder": "5.2.2",[m
+[32m+[m[32m    "com.unity.progrids": "3.0.3-preview.6",[m
+     "com.unity.render-pipelines.universal": "14.0.9",[m
+     "com.unity.test-framework": "1.1.33",[m
+     "com.unity.textmeshpro": "3.0.6",[m
+[1mdiff --git a/Packages/packages-lock.json b/Packages/packages-lock.json[m
+[1mindex 334bfc6..6c01a76 100644[m
+[1m--- a/Packages/packages-lock.json[m
+[1m+++ b/Packages/packages-lock.json[m
+[36m@@ -55,6 +55,26 @@[m
+       "dependencies": {},[m
+       "url": "https://packages.unity.com"[m
+     },[m
+[32m+[m[32m    "com.unity.probuilder": {[m
+[32m+[m[32m      "version": "5.2.2",[m
+[32m+[m[32m      "depth": 0,[m
+[32m+[m[32m      "source": "registry",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "com.unity.settings-manager": "1.0.3",[m
+[32m+[m[32m        "com.unity.modules.physics": "1.0.0",[m
+[32m+[m[32m        "com.unity.modules.imgui": "1.0.0"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "url": "https://packages.unity.com"[m
+[32m+[m[32m    },[m
+[32m+[m[32m    "com.unity.progrids": {[m
+[32m+[m[32m      "version": "3.0.3-preview.6",[m
+[32m+[m[32m      "depth": 0,[m
+[32m+[m[32m      "source": "registry",[m
+[32m+[m[32m      "dependencies": {[m
+[32m+[m[32m        "com.unity.settings-manager": "1.0.2"[m
+[32m+[m[32m      },[m
+[32m+[m[32m      "url": "https://packages.unity.com"[m
+[32m+[m[32m    },[m
+     "com.unity.render-pipelines.core": {[m
+       "version": "14.0.9",[m
+       "depth": 1,[m
+[36m@@ -93,6 +113,13 @@[m
+       "dependencies": {},[m
+       "url": "https://packages.unity.com"[m
+     },[m
+[32m+[m[32m    "com.unity.settings-manager": {[m
+[32m+[m[32m      "version": "2.0.1",[m
+[32m+[m[32m      "depth": 1,[m
+[32m+[m[32m      "source": "registry",[m
+[32m+[m[32m      "dependencies": {},[m
+[32m+[m[32m      "url": "https://packages.unity.com"[m
+[32m+[m[32m    },[m
+     "com.unity.shadergraph": {[m
+       "version": "14.0.9",[m
+       "depth": 1,[m
+[1mdiff --git a/ProjectSettings/TagManager.asset b/ProjectSettings/TagManager.asset[m
+[1mindex 1c92a78..d11ff70 100644[m
+[1m--- a/ProjectSettings/TagManager.asset[m
+[1m+++ b/ProjectSettings/TagManager.asset[m
+[36m@@ -3,7 +3,9 @@[m
+ --- !u!78 &1[m
+ TagManager:[m
+   serializedVersion: 2[m
+[31m-  tags: [][m
+[32m+[m[32m  tags:[m
+[32m+[m[32m  - WindowL[m
+[32m+[m[32m  - WindowR[m
+   layers:[m
+   - Default[m
+   - TransparentFX[m

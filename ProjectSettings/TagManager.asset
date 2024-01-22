@@ -4,10 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - SpawnTrigger
   - EndPoint
   - Keuze2
   - Keuze1
+=======
+  - WindowL
+  - WindowR
+  - Team2
+  - Concrete
+  - BHException
+  - Wood
+  - enemy
+  - Explosion
+  - Ground
+  - Enemy
+>>>>>>> 905031a377d70600137ab808b89b6df44d14fefa
   layers:
   - Default
   - TransparentFX
@@ -15,7 +28,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
