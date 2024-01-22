@@ -3,23 +3,24 @@ using UnityEngine;
 public class BlockActivateTurret : MonoBehaviour
 {
     public TurretController turret; // Assign the turret GameObject in the inspector
-
+    public Healthbar healthbar;
 
     void Update()
     {
-
-        // Check for right-click on this block
-        if (Input.GetMouseButtonDown(1)) // 1 is the mouse button index for the right button
+        if (!healthbar.gameOver)
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(1)) // 1 is the mouse button index for the right button
             {
-                // Check if the block was hit by the raycast
-                if (hit.transform == this.transform)
+                RaycastHit hit;
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit))
                 {
-                    TryActivateTurret();
+                    // Check if the block was hit by the raycast
+                    if (hit.transform == this.transform)
+                    {
+                        TryActivateTurret();
+                    }
                 }
             }
         }

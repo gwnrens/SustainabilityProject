@@ -2430,6 +2430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 569163388}
+  healthbar: {fileID: 427781368}
 --- !u!65 &238139648
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3429,6 +3430,7 @@ MonoBehaviour:
   coinRatePerSecond: 0.6
   co2Manager: {fileID: 1217912833}
   count: {fileID: 756039843}
+  healthbar: {fileID: 427781368}
 --- !u!1001 &293321948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4694,6 +4696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 1619148527}
+  healthbar: {fileID: 427781368}
 --- !u!65 &437682766
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6225,6 +6228,7 @@ MonoBehaviour:
   coinRatePerSecond: 0.4
   co2Manager: {fileID: 1217912833}
   count: {fileID: 661128785}
+  healthbar: {fileID: 427781368}
 --- !u!1 &603859450
 GameObject:
   m_ObjectHideFlags: 0
@@ -6347,6 +6351,7 @@ MonoBehaviour:
   coinRatePerSecond: 0.2
   co2Manager: {fileID: 1217912833}
   count: {fileID: 1439398982}
+  healthbar: {fileID: 427781368}
 --- !u!1001 &605635131
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22787,6 +22792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 912371819}
+  healthbar: {fileID: 427781368}
 --- !u!65 &1980727719
 BoxCollider:
   m_ObjectHideFlags: 0
