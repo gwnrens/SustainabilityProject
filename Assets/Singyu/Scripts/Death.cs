@@ -6,8 +6,8 @@ public class Death : MonoBehaviour
 {
     public GameObject deathUI; 
     public GameObject scoreboardUI; 
-    public bool isDead = false; 
-
+    public bool isDead = false;
+    public GameManager gameManager;
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Enemy"))
@@ -16,13 +16,17 @@ public class Death : MonoBehaviour
         }
     }
 
-    private void Die()
+    public void Die()
     {
         isDead = true;
         deathUI.SetActive(true); 
         scoreboardUI.SetActive(false); 
-        Time.timeScale = 0; 
-       
-        
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+
     }
+
+
 }

@@ -7,12 +7,15 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-
-    
+    public Death deathscript;
     public float temperature = 10.0f;
     public int coins = 4000;
     public TextMeshProUGUI temperatureText;
     public TextMeshProUGUI coinsText;
+    public TextMeshProUGUI coalFactoriesText;
+    public TextMeshProUGUI gasFactoriesText;
+    public TextMeshProUGUI solarPanelsText;
+    public TextMeshProUGUI nuclearPlantsText;
     private float timer = 0.0f;
     // Voor kolenfabrieken
     private int numberOfCoalFactories = 0;
@@ -39,18 +42,20 @@ public class GameManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else if (Instance != this)
         {
             Destroy(gameObject);
         }
 
-        DontDestroyOnLoad(gameObject);
+
     }
 
     private void Update()
     {
         timer += Time.deltaTime;
+        Time.timeScale = 1;
 
         if (timer >= 60.0f)
         {
@@ -63,21 +68,31 @@ public class GameManager : MonoBehaviour
                         (numberOfGasFactories * coinsIncreasePerMinuteGas) +
                         (numberOfSolarPanels * coinsIncreasePerMinuteSolar) +
                         (numberOfNuclearPlants * coinsIncreasePerMinuteNuclear));
+  
         }
 
-        temperatureText.text = $"Temperatuur: {temperature:F1}°C";
-        coinsText.text = $"Munten: {coins}";
+        temperatureText.text = $"{temperature:F1}°C";
+        coinsText.text = $"{coins}";
+        coalFactoriesText.text = $": {numberOfCoalFactories}";
+        gasFactoriesText.text = $": {numberOfGasFactories}";
+        solarPanelsText.text = $": {numberOfSolarPanels}";
+        nuclearPlantsText.text = $": {numberOfNuclearPlants}";
+        if (temperature >= 20.0f)
+        {
+            deathscript.Die(); // Call the Die method
+        }
+
     }
     public void ModifyCoins(int amount)
     {
         coins += amount;
-        coinsText.text = $"Munten: {coins}";
+        coinsText.text = $"{coins}";
     }
 
     public void ModifyTemperature(float amount)
     {
         temperature += amount;
-        temperatureText.text = $"Temperatuur: {temperature:F1}°C";
+        temperatureText.text = $"{temperature:F1}°C";
     }
     //methode voor coalfactory
     public void AddCoalFactory()
@@ -154,4 +169,7 @@ public class GameManager : MonoBehaviour
     {
         ModifyCoins(20); 
     }
+
+
+
 }

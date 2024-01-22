@@ -18,8 +18,7 @@ public class ActivateFactory : MonoBehaviour
     {
         if (other.CompareTag("Player")) 
         {
-            coalFactory.SetActive(true); 
-            audioSource.Play(); 
+
         }
     }
 }
