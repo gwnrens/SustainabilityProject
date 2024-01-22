@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
+    public GameManagerElec gameManagerElec;
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
@@ -32,6 +33,7 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
+
 
         #region Handles Movment
         Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -75,5 +77,6 @@ public class FPSController : MonoBehaviour
         }
 
         #endregion
+
     }
 }

@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class SellGasFactory : MonoBehaviour
 {
+
     public int factorySellValue = 15;
+    public GameManagerElec gameManagerElec;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameManager.Instance.GetNumberOfGasFactories() > 0)
+        if (other.CompareTag("Player") && gameManagerElec.GetNumberOfGasFactories() > 0)
         {
-            GameManager.Instance.ModifyCoins(factorySellValue);
-            GameManager.Instance.RemoveGasFactory();
+            gameManagerElec.ModifyCoins(factorySellValue);
+            gameManagerElec.RemoveGasFactory();
         }
     }
 }

@@ -6,13 +6,14 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 public class SellCoalFactory : MonoBehaviour
 {
     public int factorySellValue = 20;
+    public GameManagerElec gameManagerElec;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.ModifyCoins(factorySellValue);
-            GameManager.Instance.RemoveCoalFactory();
+            gameManagerElec.ModifyCoins(factorySellValue);
+            gameManagerElec.RemoveCoalFactory();
         }
     }
 }

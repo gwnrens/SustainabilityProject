@@ -7,7 +7,7 @@ public class Death : MonoBehaviour
     public GameObject deathUI; 
     public GameObject scoreboardUI; 
     public bool isDead = false;
-    public GameManager gameManager;
+    public GameManagerElec gameManager;
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.CompareTag("Enemy"))

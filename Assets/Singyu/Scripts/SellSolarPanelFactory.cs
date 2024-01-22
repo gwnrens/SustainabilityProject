@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SellSolarPanelFactory : MonoBehaviour
 {
-    public int solarPanelSellValue = 50; 
+    public int solarPanelSellValue = 50;
+    public GameManagerElec gameManagerElec;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameManager.Instance.GetNumberOfSolarPanels() > 0)
+        if (other.CompareTag("Player") && gameManagerElec.GetNumberOfSolarPanels() > 0)
         {
-            GameManager.Instance.ModifyCoins(solarPanelSellValue);
-            GameManager.Instance.RemoveSolarPanel();
+            gameManagerElec.ModifyCoins(solarPanelSellValue);
+            gameManagerElec.RemoveSolarPanel();
         }
     }
 }

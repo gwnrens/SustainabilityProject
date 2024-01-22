@@ -5,13 +5,14 @@ using UnityEngine;
 public class LightSwitch : MonoBehaviour
 {
     public Light associatedLight;
+    public GameManagerElec gameManager; 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && associatedLight.enabled)
         {
-            associatedLight.enabled = false; 
-            GameManager.Instance.ModifyCoins(20); 
+            associatedLight.enabled = false;
+            gameManager.ModifyCoins(20);
         }
     }
 }

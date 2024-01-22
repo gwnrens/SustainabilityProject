@@ -6,13 +6,14 @@ using UnityEngine;
 public class BuyCoalFactoryPlatform : MonoBehaviour
 {
     public int factoryCost = 40;
+    public GameManagerElec gameManagerElec; 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameManager.Instance.coins >= factoryCost)
+        if (other.CompareTag("Player") && gameManagerElec.coins >= factoryCost)
         {
-            GameManager.Instance.ModifyCoins(-factoryCost);
-            GameManager.Instance.AddCoalFactory();
+            gameManagerElec.ModifyCoins(-factoryCost);
+            gameManagerElec.AddCoalFactory();
         }
     }
 }

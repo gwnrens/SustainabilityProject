@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class BuyNuclearFactoryPlatform : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && GameManager.Instance.coins >= GameManager.Instance.nuclearPlantCost)
+
+        public GameManagerElec gameManagerElec;
+
+        private void OnTriggerEnter(Collider other)
         {
-            GameManager.Instance.ModifyCoins(-GameManager.Instance.nuclearPlantCost);
-            GameManager.Instance.AddNuclearPlant();
+            if (other.CompareTag("Player") && gameManagerElec.coins >= gameManagerElec.nuclearPlantCost)
+            {
+                gameManagerElec.ModifyCoins(-gameManagerElec.nuclearPlantCost);
+                gameManagerElec.AddNuclearPlant();
+            }
         }
     }
-}

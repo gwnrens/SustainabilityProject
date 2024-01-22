@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class BuySolarPanelFactory : MonoBehaviour
 {
+    public GameManagerElec gameManagerElec;
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameManager.Instance.coins >= GameManager.Instance.solarPanelCost)
+        if (other.CompareTag("Player") && gameManagerElec.coins >= gameManagerElec.solarPanelCost)
         {
-            GameManager.Instance.ModifyCoins(-GameManager.Instance.solarPanelCost);
-            GameManager.Instance.AddSolarPanel();
+            gameManagerElec.ModifyCoins(-gameManagerElec.solarPanelCost);
+            gameManagerElec.AddSolarPanel();
         }
     }
 }

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class BuyGasFactory : MonoBehaviour
 {
-    public int factoryCost = 30; 
+    public int factoryCost = 30;
+    public GameManagerElec gameManagerElec;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && GameManager.Instance.coins >= factoryCost)
+        if (other.CompareTag("Player") && gameManagerElec.coins >= factoryCost)
         {
-            GameManager.Instance.ModifyCoins(-factoryCost);
-            GameManager.Instance.AddGasFactory();
+            gameManagerElec.ModifyCoins(-factoryCost);
+            gameManagerElec.AddGasFactory();
         }
     }
 }

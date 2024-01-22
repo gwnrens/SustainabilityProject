@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-
-public class GameManager : MonoBehaviour
+public class GameManagerElec : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
     public Death deathscript;
     public float temperature = 10.0f;
     public int coins = 4000;
@@ -17,18 +15,22 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI solarPanelsText;
     public TextMeshProUGUI nuclearPlantsText;
     private float timer = 0.0f;
+    public GameObject pauseMenuUI;
+    public GameObject scoreboardUI;
+
+    public bool isGamePaused = false;
     // Voor kolenfabrieken
     private int numberOfCoalFactories = 0;
     public float temperatureIncreasePerMinute = 0.5f;
     public int coinsIncreasePerMinute = 20;
     //voor gasfabriek
     private int numberOfGasFactories = 0;
-    public float temperatureIncreasePerMinuteGas = 0.3f; 
+    public float temperatureIncreasePerMinuteGas = 0.3f;
     public int coinsIncreasePerMinuteGas = 15;
     //voor zonnepanelen
     private int numberOfSolarPanels = 0;
-    public int solarPanelCost = 100; 
-    public float temperatureIncreasePerMinuteSolar = 0.1f; 
+    public int solarPanelCost = 100;
+    public float temperatureIncreasePerMinuteSolar = 0.1f;
     public int coinsIncreasePerMinuteSolar = 20;
     //voor kerncentrale
     private int numberOfNuclearPlants = 0;
@@ -37,25 +39,23 @@ public class GameManager : MonoBehaviour
     // Voor lampen
     public Light[] lights;
 
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-
-    }
 
     private void Update()
     {
         timer += Time.deltaTime;
         Time.timeScale = 1;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGamePaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+
 
         if (timer >= 60.0f)
         {
@@ -63,12 +63,12 @@ public class GameManager : MonoBehaviour
             ModifyTemperature((numberOfCoalFactories * temperatureIncreasePerMinute) +
                               (numberOfGasFactories * temperatureIncreasePerMinuteGas) +
                               (numberOfSolarPanels * temperatureIncreasePerMinuteSolar));
-       
+
             ModifyCoins((numberOfCoalFactories * coinsIncreasePerMinute) +
                         (numberOfGasFactories * coinsIncreasePerMinuteGas) +
                         (numberOfSolarPanels * coinsIncreasePerMinuteSolar) +
                         (numberOfNuclearPlants * coinsIncreasePerMinuteNuclear));
-  
+
         }
 
         temperatureText.text = $"{temperature:F1}°C";
@@ -167,9 +167,27 @@ public class GameManager : MonoBehaviour
     //lamp
     public void TurnOffLight()
     {
-        ModifyCoins(20); 
+        ModifyCoins(20);
+    }
+    public void PauseGame()
+    {
+        pauseMenuUI.SetActive(true); 
+        scoreboardUI.SetActive(false); 
+        Time.timeScale = 0f; 
+        isGamePaused = true;
+        Cursor.lockState = CursorLockMode.None; 
+        Cursor.visible = true; 
     }
 
+    public void ResumeGame()
+    {
+        pauseMenuUI.SetActive(false); 
+        scoreboardUI.SetActive(true); 
+        Time.timeScale = 1f; 
+        isGamePaused = false;
+        Cursor.lockState = CursorLockMode.Locked; 
+        Cursor.visible = false; 
+    }
 
 
 }
