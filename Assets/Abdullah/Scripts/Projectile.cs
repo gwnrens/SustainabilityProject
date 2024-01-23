@@ -31,7 +31,7 @@ public class Projectile : MonoBehaviour
 	public float lifetime = 30.0f;										// The maximum time (in seconds) before the projectile is destroyed
 	
 	public float seekRate = 1.0f;										// The rate at which the projectile will turn to seek enemies
-	public string seekTag = "Enemy";									// The projectile will seek gameobjects with this tag
+	public string seekTag = "enemy";									// The projectile will seek gameobjects with this tag
 	public GameObject explosion;										// The explosion to be instantiated when this projectile hits something
 	public float targetListUpdateRate = 1.0f;							// The rate at which the projectile will update its list of all enemies to target
 

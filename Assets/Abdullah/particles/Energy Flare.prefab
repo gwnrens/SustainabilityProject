@@ -9750,7 +9750,7 @@ MonoBehaviour:
   initialForce: 0
   lifetime: 20
   seekRate: 1
-  seekTag: Enemy
+  seekTag: enemy
   explosion: {fileID: 100002, guid: afaf375eaf07ae1418d96ba144d3144c, type: 3}
   targetListUpdateRate: 1
   clusterBomb: {fileID: 0}
