@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject mainCanvas;
     public GameObject gameEndCanvas;
+    public GameObject introCanvas;
+    public GameObject ControlsCanvas;
 
     public Image Boost1;
     public Image Boost2;
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 0;
+        introCanvas.SetActive(true);
+        ControlsCanvas.SetActive(false);
         mainCanvas.SetActive(false);
         gameEndCanvas.SetActive(false);
 
