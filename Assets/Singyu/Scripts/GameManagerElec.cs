@@ -14,10 +14,11 @@ public class GameManagerElec : MonoBehaviour
     public TextMeshProUGUI gasFactoriesText;
     public TextMeshProUGUI solarPanelsText;
     public TextMeshProUGUI nuclearPlantsText;
+   
     private float timer = 0.0f;
     public GameObject pauseMenuUI;
     public GameObject scoreboardUI;
-
+    public GameObject winUI;
     public bool isGamePaused = false;
     // Voor kolenfabrieken
     private int numberOfCoalFactories = 0;
@@ -81,7 +82,10 @@ public class GameManagerElec : MonoBehaviour
         {
             deathscript.Die(); // Call the Die method
         }
-
+        if (numberOfNuclearPlants >= 2)
+        {
+            WinGame();
+        }
     }
     public void ModifyCoins(int amount)
     {
@@ -188,6 +192,15 @@ public class GameManagerElec : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false; 
     }
+    public void WinGame()
+    {
+        winUI.SetActive(true);
+        Time.timeScale = 0f; 
+        isGamePaused = true; 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
 
 
 }
