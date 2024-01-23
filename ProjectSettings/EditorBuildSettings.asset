@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Groen_Menu.unity
+    path: Assets/Seppe/Scenes/Groen_Menu.unity
     guid: 488916b44eaab244f8807aa93ed41a8e
   - enabled: 1
-    path: Assets/Scenes/FNAF_Groen.unity
+    path: Assets/Seppe/Scenes/FNAF_Groen.unity
     guid: 291c1f116413b5e49b525eb08670031c
   m_configObjects: {}
