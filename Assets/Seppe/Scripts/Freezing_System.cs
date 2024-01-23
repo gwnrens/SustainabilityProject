@@ -286,7 +286,7 @@ public class ColdSimulation : MonoBehaviour
     private void MoveToNextScene()
     {
         // Laad de volgende scene wanneer 5 minute voorbij zijn gegaan
-        SceneManager.LoadScene(nextSceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private void ShowGameOverText(string message)
