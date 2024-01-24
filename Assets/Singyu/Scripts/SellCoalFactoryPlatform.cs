@@ -10,7 +10,7 @@ public class SellCoalFactory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&&gameManagerElec.GetNumberOfCoalPlants()>0)
         {
             gameManagerElec.ModifyCoins(factorySellValue);
             gameManagerElec.RemoveCoalFactory();

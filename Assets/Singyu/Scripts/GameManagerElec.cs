@@ -169,6 +169,10 @@ public class GameManagerElec : MonoBehaviour
         return numberOfNuclearPlants;
     }
 
+    public int GetNumberOfCoalPlants()
+    {
+        return numberOfCoalFactories;
+    }
 
     //lamp
     public void TurnOffLight()
