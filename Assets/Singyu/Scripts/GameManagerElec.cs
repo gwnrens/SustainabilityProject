@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,7 +8,7 @@ public class GameManagerElec : MonoBehaviour
 {
     public Death deathscript;
     public float temperature = 10.0f;
-    public int coins = 4000;
+    public int coins = 40;
     public TextMeshProUGUI temperatureText;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI coalFactoriesText;
@@ -17,6 +18,7 @@ public class GameManagerElec : MonoBehaviour
     private float timer = 0.0f;
     public GameObject pauseMenuUI;
     public GameObject scoreboardUI;
+    public GameObject winUI;
 
     public bool isGamePaused = false;
     // Voor kolenfabrieken
@@ -80,6 +82,10 @@ public class GameManagerElec : MonoBehaviour
         if (temperature >= 20.0f)
         {
             deathscript.Die(); // Call the Die method
+        }
+        if (numberOfNuclearPlants >= 2)
+        {
+            WinGame();
         }
 
     }
@@ -187,6 +193,14 @@ public class GameManagerElec : MonoBehaviour
         isGamePaused = false;
         Cursor.lockState = CursorLockMode.Locked; 
         Cursor.visible = false; 
+    }
+    public void WinGame()
+    {
+        winUI.SetActive(true); 
+        Time.timeScale = 0f; 
+        isGamePaused = true; 
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
 
