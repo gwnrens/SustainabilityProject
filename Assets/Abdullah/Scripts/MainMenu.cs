@@ -12,8 +12,7 @@ public class ABMainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
-        Application.Quit();
+        SceneManager.LoadScene("Menu");
     }
 
     public void GoToMainMenu()
@@ -23,6 +22,6 @@ public class ABMainMenu : MonoBehaviour
 
     public void NextGame()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("GetToWork");
     }
 }

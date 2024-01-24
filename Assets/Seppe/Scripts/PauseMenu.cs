@@ -25,7 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GiveUp()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Si_MainMenu");
     }
 
     public void PauseGame()

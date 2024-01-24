@@ -11603,7 +11603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dd6c361d92d1b42909af550d163e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 800
+  mouseSensitivity: 550
   playerBody: {fileID: 1000551447}
   mouseLookEnabled: 0
 --- !u!114 &1073860784
@@ -13694,8 +13694,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1274099205}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: PlayGame
+        m_TargetAssemblyTypeName: ABMainMenu, Assembly-CSharp
+        m_MethodName: NextGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

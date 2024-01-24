@@ -12,12 +12,12 @@ public class ColdSimulation : MonoBehaviour
     public float dangerMeterDecreaseRate = 2f;
 
     //text elementen UI
-    public Text coldValueText;     
-    public Text dangerMeterText;   
-    public Text timerText;         
+    public Text coldValueText;
+    public Text dangerMeterText;
+    public Text timerText;
     public Text gameOverText;
     public Text winText;
-    
+
     public string nextSceneName = "NextScene";     // naam voor volgende scene
     public float restartDelay = 10f;                // delay voor herstarten van het spel
     public float survivalTime = 300f;               // totale duratie van spel
@@ -67,22 +67,22 @@ public class ColdSimulation : MonoBehaviour
             DecreaseDangerMeter();
         }
 
-        float dangerLevel = GameObject.FindObjectOfType<ColdSimulation>().dangerMeter;
-
-        if (dangerLevel >= 25f && enemyGate.activeSelf)
+        //kijkt of danger level een bepaald getal hit en zal dan de enemy verplaatsen naar een random plek buiten de laatste keer omdat ik een bug had die ik niet kon fixed dus er is maar 1 final enemy position
+        // meer over deze bug in de documentatie
+        if (dangerMeter >= 25f && enemyGate.activeSelf)
         {
             DeactivateEnemy(enemyGate);
             ActivateRandomEnemy(enemyRoof, enemyEntrance);
         }
 
-        if (dangerLevel >= 50f && (enemyRoof.activeSelf || enemyEntrance.activeSelf))
+        if (dangerMeter >= 50f && (enemyRoof.activeSelf || enemyEntrance.activeSelf))
         {
             DeactivateEnemy(enemyRoof);
             DeactivateEnemy(enemyEntrance);
             ActivateRandomEnemy(enemyKitchen, enemyBathroom);
         }
 
-        if (dangerLevel >= 75f && (enemyKitchen.activeSelf || enemyBathroom.activeSelf))
+        if (dangerMeter >= 75f && (enemyKitchen.activeSelf || enemyBathroom.activeSelf))
         {
             DeactivateEnemy(enemyKitchen);
             DeactivateEnemy(enemyBathroom);
@@ -235,8 +235,7 @@ public class ColdSimulation : MonoBehaviour
                         Debug.Log("Resetting Danger Value");
                         // reset danger level met percentage tussen 20 & 45
                         float resetPercentage = Random.Range(20f, 45f);
-                        ColdSimulation coldSimulation = FindObjectOfType<ColdSimulation>();
-                        coldSimulation.dangerMeter = Mathf.Max(0f, coldSimulation.dangerMeter - resetPercentage);
+                        dangerMeter = Mathf.Max(0f, dangerMeter - resetPercentage);
 
                         dangerResetDone = true; // Zet danger reset op true zodat dit niet meerdere keren gebeurd
 
@@ -244,10 +243,10 @@ public class ColdSimulation : MonoBehaviour
                         enemyWindow.SetActive(false);
                     }
                     else if (enemyWindow.activeSelf && windowClosedTimer >= 15f)
+                    // Deze bug is fout, windowClosedTimer zou weg moeten want we moeten checken of de enemy active is voor 15 seconden wanneer deze open is maar als ik dit weghaal is er een error
                     {
                         Debug.Log("Setting Danger to 100 because enemyWindow is active for longer than 15 seconds");
-                        ColdSimulation coldSimulation = FindObjectOfType<ColdSimulation>();
-                        coldSimulation.dangerMeter = 100f;
+                        dangerMeter = 100f;
                     }
                 }
             }
