@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/FNAF_Groen.unity
+    path: Assets/Seppe/Scenes/FNAF_Groen.unity
     guid: 291c1f116413b5e49b525eb08670031c
   - enabled: 1
     path: Assets/Singyu/Scenes/ElectricityBuild.unity
@@ -23,12 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Singyu/Scenes/Si_MainMenu.unity
     guid: 17d877e6081869946b8d3d0c180d5b7f
-    path: Assets/Singyu/Scenes/ElectricityBuild.unity
-    guid: 9aeb8f1616bceb44dbd022ab74f3ed71
   - enabled: 1
-    path: Assets/Scenes/Groen_Menu.unity
+    path: Assets/MainMenu/Menu.unity
+    guid: dd6d1a61530abb443b47383e2a15218a
+  - enabled: 1
+    path: Assets/Rens/Scenes/GetToWork.unity
+    guid: 928952d2c1fdc7f4f9eb852c8c7bd06e
+  - enabled: 1
+    path: Assets/Seppe/Scenes/Groen_Menu.unity
     guid: 488916b44eaab244f8807aa93ed41a8e
   - enabled: 1
-    path: Assets/Scenes/FNAF_Groen.unity
+    path: Assets/Seppe/Scenes/FNAF_Groen.unity
     guid: 291c1f116413b5e49b525eb08670031c
   m_configObjects: {}
