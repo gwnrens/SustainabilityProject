@@ -5,26 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    int teller;
+    bool eerstHulp = false;
     public GameObject eerstHulpText;
 
     public void PlayGame()
     {
-       if (teller == 1)
+       if (eerstHulp == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
        else
         {
             eerstHulpText.SetActive(true);
-            Invoke("HulpGame", 5f);
         }
     }
 
     public void HulpGame()
     {
         eerstHulpText.SetActive(false);
-        teller++;
+        eerstHulp = true;
     }
 
     public void QuitGame()
