@@ -53,13 +53,13 @@ In "De koude nacht" is het jouw taak om met behulp van camera, radiator en je ho
 - De speler verliest door ofterwel de warmte meter tot 0 te laten zakken, door het gevaar tot 100 te laten stijgen of door te lang te wachten als de enemy aan het raam staat.
 
 #### Script Overzicht
-**Camera_System.cs** Dit script is verantwoordelijk voor het veranderen van camera en juiste activatie en deactivatie van deze camera's
-**Close windows.cs** Dit script is verantwoordelijk voor het draaien van het raam, dit heeft ook een functie voor het Freezing_System script om te kijken of het raam gesloten is of niet.
-**FlashLight.cs** Dit script is verantwoordelijk om een zaklamp aan en uit te zetten, helaas heeft dit geen functie in het spel. (zie code voor meer uitleg)
-**Freezing_System.cs** Dit script is verantwoordelijk voor veel dingen namelijk: Het aanpassen (stijgen en dalen van warmte & gevaars meters), De positie van de "enemy" aanpassen, Game over condities en de Game win conditie.
-**MainMenu.cs** Dit script is verantwoordelijk voor het tonen van de twee panelen in het menu namelijk de orginele set knoppen met (start, hulp en quit) en ook het hulp menu met uitleg van het spel.
-**PauseMenu.cs** Dit script is verantwoordelijk voor de acties van de knoppen in het pause menu zoals pauzeren maar ook de knop Give up dat de speler naar het volgend level stuurt
-**SoundClick.cs** Dit script is verantwoordelijk om een geluid af te spelen wanneer er geklikt word op de radiator. Waarom ik dit appart heb gezet weet ik zelf eigenlijk niet meer sinds dit het laatste object was dat ik geluid heb gegeven en de andere twee objecten die geluid hebben gewoon deze functie in hun script hebben staan met de andere functionaliteiten.
+- **Camera_System.cs** Dit script is verantwoordelijk voor het veranderen van camera en juiste activatie en deactivatie van deze camera's
+- **Close windows.cs** Dit script is verantwoordelijk voor het draaien van het raam, dit heeft ook een functie voor het Freezing_System script om te kijken of het raam gesloten is of niet.
+- **FlashLight.cs** Dit script is verantwoordelijk om een zaklamp aan en uit te zetten, helaas heeft dit geen functie in het spel. (zie code voor meer uitleg)
+- **Freezing_System.cs** Dit script is verantwoordelijk voor veel dingen namelijk: Het aanpassen (stijgen en dalen van warmte & gevaars meters), De positie van de "enemy" aanpassen, Game over condities en de Game win conditie.
+- **MainMenu.cs** Dit script is verantwoordelijk voor het tonen van de twee panelen in het menu namelijk de orginele set knoppen met (start, hulp en quit) en ook het hulp menu met uitleg van het spel.
+- **PauseMenu.cs** Dit script is verantwoordelijk voor de acties van de knoppen in het pause menu zoals pauzeren maar ook de knop Give up dat de speler naar het volgend level stuurt
+- **SoundClick.cs** Dit script is verantwoordelijk om een geluid af te spelen wanneer er geklikt word op de radiator. Waarom ik dit appart heb gezet weet ik zelf eigenlijk niet meer sinds dit het laatste object was dat ik geluid heb gegeven en de andere twee objecten die geluid hebben gewoon deze functie in hun script hebben staan met de andere functionaliteiten.
 
 #### User Interface (UI)
 
